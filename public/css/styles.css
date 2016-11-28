@@ -1,0 +1,109 @@
+button.add-user{
+	margin-bottom: 25px;
+}
+body{
+	background:url(https://s4.postimg.org/6vzbi46vx/background.jpg) center center no-repeat fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover
+}
+.mask{
+	position:fixed;
+	top:0;
+	left:0;
+	min-width:100%;
+	min-height:100%;
+	opacity:.8;
+	background-color:#000;
+}
+.container{
+ 	z-index: 1000
+}
+h1,h2,h3,h4,h5,h6,th,tr,p{
+	color: #ccc;
+	text-shadow: 1px 1px 1px #000;
+}
+.btn{
+	font-weight: lighter !important
+}
+.btn:hover{
+	color: #fff !important;
+	text-shadow: 1px 1px 1px #000;
+}
+.btn-success{
+	background-color: transparent !important;
+	border: 1px solid #4ded12 !important;
+	color: #4ded12 !important;
+}
+.btn-success:hover{
+	background-color: #4ded12 !important;
+	border: 1px solid #4ded12 !important;
+}
+.btn-warning{
+	background-color: transparent !important;
+	border: 1px solid #fff600 !important;
+	color: #fff600 !important;
+}
+.btn-warning:hover{
+	background-color: #fff600 !important;
+	border: 1px solid #fff600 !important;
+}
+.btn-danger{
+	background-color: transparent !important;
+	border: 1px solid #ff0000 !important;
+	color: #ff0000 !important;
+}
+.btn-danger:hover{
+	background-color: #ff0000 !important;
+	border: 1px solid #ff0000 !important;
+}
+.btn-info{
+	background-color: transparent !important;
+	border: 1px solid #00d8ff !important;
+	color: #00d8ff !important;
+}
+.btn-info:hover{
+	background-color: #00d8ff !important;
+	border: 1px solid #00d8ff !important;
+}
+.btn-primary{
+	background-color: transparent !important;
+	border: 1px solid #007bff !important;
+	color: #007bff !important;
+}
+.btn-primary:hover{
+	background-color: #007bff !important;
+	border: 1px solid #007bff !important;
+}
+tr:nth-child(odd){
+    background: rgba(255,255,255,0.1) !important;
+    color: #ccc;
+    border: none !important;
+}
+tr:nth-child(even){
+    background: rgba(255,255,255,0.) !important;
+    color: #ccc;
+}
+input{
+	background-color: transparent !important;
+	color: #00d8ff !important;
+	/*border-color: #00d8ff !important*/	
+}
+.modal-content {
+  background: rgba(0,0,0,0.9)
+}
+tr{
+	vertical-align: middle
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px dotted rgba(255,255,255, 0.2)
+}
+@media screen and (max-width: 767px){
+	.table-responsive {
+	    border: none !important
+	}
+}

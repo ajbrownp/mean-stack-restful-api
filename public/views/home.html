@@ -1,0 +1,60 @@
+<div class="homeBody">
+	<div class="container">
+		<h1 class="text-center">{{title}}</h1>
+	</div>
+	<div ng-init="addUser = false;">
+		<div class="container">
+			<button type="button" class="btn btn-success btn-lg btn-block add-user" data-toggle="modal" data-target="#addUserModal" ng-click="addUserMain">Add User</button>
+		</div>
+		
+	</div>
+	<div class="container users-container table-responsive  table-striped " >
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Last Name</th>
+					<th class="hidden-xs">Number</th>
+					<th class="hidden-xs">Email</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat = "user in users">
+				<!-- if not editing -->
+					<td data-toggle="modal" data-target="#userData" ng-click="viewInfo(user)" ng-if="!editing">{{user.name}}</td>
+					<td data-toggle="modal" data-target="#userData" ng-click="viewInfo(user)" ng-if="!editing">{{user.lastName}}</td>
+					<td class="hidden-xs" data-toggle="modal" data-target="#userData" ng-click="viewInfo(user)" ng-if="!editing">{{user.number}}</td>
+					<td class="hidden-xs" data-toggle="modal" data-target="#userData" ng-click="viewInfo(user)" ng-if="!editing">{{user.email}}</td>
+				<!-- when editing -->
+					<td ng-if="editing">
+						<input type="text" class="form-control animated fadeIn" placeholder="Name" ng-model="user.name" required>
+					</td>
+					<td ng-if="editing">
+						<input type="text" class="form-control animated fadeIn" placeholder="Last Name" ng-model="user.lastName">
+					</td>
+					<td ng-if="editing">
+						<input type="number" class="form-control animated fadeIn" placeholder="Number" ng-model="user.number" minlength="6"maxlength="10" required>
+					</td>
+					<td ng-if="editing">
+						<input type="email" class="form-control animated fadeIn" placeholder="Email" ng-model="user.email">
+					</td>
+					<td>
+						<button class= "btn btn-warning animated fadeIn" ng-click= "editing=!editing" ng-hide="editing" id="editButton">Edit
+						</button>
+						<button class= "btn btn-danger animated fadeIn" ng-click="delete(user)" ng-hide="editing">Delete
+						</button>
+						<button class= "btn btn-info animated fadeIn" ng-click="update(user)" ng-hide="!editing">Update
+						</button>
+						<button class= "btn btn-primary animated fadeIn" ng-click="editing=!editing"  ng-hide="!editing">Back
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+
+
