@@ -39,7 +39,7 @@
 	        <div class="modal-dialog modal-sm">
 	            <div class="modal-content">
 	                <div class="modal-header">
-	                   <h4 class="modal-title" id="myModalLabel">Add User</h4>
+	                   <h4 class="modal-title text-center" id="myModalLabel">Add User</h4>
 	                </div>
 					<div class="modal-body">
 						<div class="row" >
@@ -49,22 +49,28 @@
 										<input type="text" class="form-control" placeholder="Name" 
 									    ng-model="user.name" name="name"  id="userName" pattern="[a-zA-Z]+" required>
 									</div>
-									<div class="form-group">
+									<div class="form-group" ng-class="{'has-error' : myForm.lastName.$dirty && myForm.lastName.$invalid, 'has-success' : myForm.lastName.$dirty && myForm.lastName.$valid}">
 										<input type="text" class="form-control" placeholder="Last Name" 
-									    ng-model="user.lastName" id="userLastName" required>
+									    ng-model="user.lastName" name="lastName" id="userLastName" pattern="[a-zA-Z]+"required>
 									</div>
-									 <div class="form-group">
-									    <input type="number" class="form-control"  placeholder="Number" ng-model="user.number" minlength="6" maxlength="10" id="userNumber" required>
+									 <div class="form-group" ng-class="{'has-error' : myForm.phoneNumber.$dirty && myForm.phoneNumber.$invalid, 'has-success' : myForm.phoneNumber.$dirty && myForm.phoneNumber.$valid}">
+									    <input type="number" class="form-control"  placeholder="Number" ng-model="user.number" minlength="6" maxlength="10" id="userNumber" name="phoneNumber" required>
 									</div>
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email" ng-model="user.email" id="userEmail" required>
+									<div class="form-group" ng-class="{'has-error' : myForm.email.$dirty && myForm.email.$invalid, 'has-success' : myForm.email.$dirty && myForm.email.$valid}">
+										<input type="email" class="form-control" placeholder="Email" ng-model="user.email" id="userEmail" ng-pattern="/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/" name="email"required>
 									</div>
-									<div class="form-group">
-										<button  class="btn btn-success center" ng-disabled="!user.name || !user.number" ng-click="Add()" id="addUser" class="close" data-dismiss="modal">Add User
-										</button>
-									   	<button  class="btn btn-primary center" class="close" data-dismiss="modal" aria-label="Close">Go Back
-									   	</button>
-									</div>	  
+									<div class="modal-footer">
+										<div class="form-group">
+											<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+												<button  class="btn btn-primary center pull-right" class="close" data-dismiss="modal" aria-label="Close">Go Back
+										   		</button>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+												<button  class="btn btn-success center pull-right" ng-disabled="!user.name || !user.number || !user.lastName || !user.email" ng-click="Add()" id="addUser" class="close" data-dismiss="modal">Add User
+												</button>
+										   	</div>
+										</div>	
+									</div>  
 								</form>  
 							</div>	
 						</div>              

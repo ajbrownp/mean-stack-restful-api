@@ -111,7 +111,8 @@ router.put('/api/users/:id', function (request, response){
 app.use('/', router);
 
 //set the listening port for the express server
-app.listen(process.env.PORT, function(){
-	console.log('Listening on port 4517');
+var port= process.env.PORT || 4517
+app.listen(port ,  function(){
+	console.log('Listening on port' + port);
 });
 

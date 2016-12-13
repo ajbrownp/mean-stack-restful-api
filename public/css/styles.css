@@ -22,7 +22,7 @@ body{
 }
 h1,h2,h3,h4,h5,h6,th,tr,p{
 	color: #ccc;
-	text-shadow: 1px 1px 1px #000;
+	/*text-shadow: 1px 1px 1px #000;*/
 }
 .btn{
 	font-weight: lighter !important
@@ -87,7 +87,7 @@ tr:nth-child(even){
 }
 input{
 	background-color: transparent !important;
-	color: #00d8ff !important;
+	color: #ccc;
 	/*border-color: #00d8ff !important*/	
 }
 .modal-content {
@@ -106,4 +106,34 @@ tr{
 	.table-responsive {
 	    border: none !important
 	}
+}
+.modal-backdrop {
+  background-color: #fff;
+}
+input{
+	border-top: none !important;	
+	border-left: none !important;
+	border-right: none !important;
+	border-radius: 0 !important;
+	outline: 0;
+  	border-width: 0 0 2px 0;
+  	border-color: blue
+}
+input:focus{
+	box-shadow: none !important
+}
+.has-error .form-control:focus, {
+    border-bottom: 1.5px solid #FF0000 !important
+}
+.has-error .form-control {
+    border-bottom: 1.5px solid #FF0000 !important
+}
+.has-success .form-control {
+   border-bottom: 1.5px solid #4DED12 !important
+}
+.has-success .form-control:focus, {
+   border-bottom: 1.5px solid #4DED12 !important
+}
+.modal-header, .modal-footer{
+	border: none !important
 }
